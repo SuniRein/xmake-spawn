@@ -1,11 +1,10 @@
-import("core.base.global")
 import("core.base.option")
 
 local function check_template_dir()
-    local template_dir = os.getenv("XMAKE_SPAWN_TEMPLATES")
+    local template_dir = os.getenv("XMAKE_SPAWN_TEMPLATEDIR")
 
     if not template_dir then
-        raise("Please set the XMAKE_SPAWN_TEMPLATES environment variable.")
+        raise("Please set the XMAKE_SPAWN_TEMPLATEDIR environment variable.")
     end
 
     if not os.isdir(template_dir) then
